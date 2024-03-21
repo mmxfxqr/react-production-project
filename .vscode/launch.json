@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Запустить программу",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/build/bundle.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Отладка Webpack",
+      "program": "${workspaceFolder}/node_modules/webpack/bin/webpack.js",
+      "args": [
+        "--mode",
+        "development",
+        "--watch"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/build/**/*.js"
+      ],
+      "sourceMaps": true,
+      "protocol": "inspector",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
